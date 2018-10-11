@@ -9,6 +9,7 @@ import { Variant, State } from '../types'
  */
 export const defaultState: State = {
   money: 0,
+  stuff: [0],
   snackbar: {
     open: false,
     message: 'WE ARE IN BOIS, HOLD YOUR GROUND',

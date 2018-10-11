@@ -17,7 +17,8 @@ export const reducer = (state: State, action: Action) => {
       return {
         ...action.state,
         isLoading: false,
-        snackbar: { open: true, message: 'SERBER STATE GOTTEN', variant: 'success' }
+        snackbar: { open: true, message: 'SERBER STATE GOTTEN', variant: 'success' },
+        money: 100
       }
     // this probably should be done in the saga but same thing?
     default:

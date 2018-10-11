@@ -8,6 +8,7 @@ export type State = Readonly<{
   money: number;
   snackbar: Snackbar;
   isLoading: any;
+  stuff: number[];
 }>
 // used in api.ts
 export type Action = Readonly<{ type: 'OPEN_SNACKBAR'; message: string; variant: Variant }

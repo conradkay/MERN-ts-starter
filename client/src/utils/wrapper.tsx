@@ -3,19 +3,17 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import { Router } from './router'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { reducer, SnackbarRoot, runAll, defaultState } from '../exports'
-import createSagaMiddleware from 'redux-saga'
+import { reducer, SnackbarRoot, defaultState, getStateServer } from '../exports'
+import thunk from 'redux-thunk'
 import { theme } from './theme'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 
-const sagaMiddleware = createSagaMiddleware()
 
-export const store = createStore(reducer, defaultState, composeWithDevTools(applyMiddleware(sagaMiddleware)))
+export const store = createStore(reducer, defaultState, composeWithDevTools(applyMiddleware(thunk)))
 
-sagaMiddleware.run(runAll)
 
 const Wrapper = () => {
-  store.dispatch({ type: 'GET_STATE_REQUEST' })
+  store.dispatch(getStateServer())
   return (
     <Provider store={store}>
       <MuiThemeProvider theme={theme}>
