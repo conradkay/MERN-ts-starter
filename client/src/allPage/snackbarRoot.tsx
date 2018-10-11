@@ -2,8 +2,8 @@ import * as React from 'react'
 import {
   closeSnackbar, getClassSnackbarVariant
 } from '../exports'
-import {State, Variant} from '../types'
-import {Dispatch} from 'redux'
+import { State, Variant } from '../types'
+import { Dispatch } from 'redux'
 import {
   withStyles, WithStyles, createStyles, Theme,
   SnackbarContent, Snackbar, IconButton,
@@ -40,7 +40,7 @@ interface Props extends WithStyles<typeof styles> {
 class SnackbarWrapComponent extends React.Component<Props> {
   render() {
     // Find what Icon to use for snackbar by variant
-    const variantIcon: {success: any; warning: any; error: any } = {
+    const variantIcon: { success: any; warning: any; error: any } = {
       success: CheckCircleIcon,
       warning: WarningIcon,
       error: ErrorIcon
@@ -51,7 +51,7 @@ class SnackbarWrapComponent extends React.Component<Props> {
     const Icon = variantIcon[variant]
     return (
       <Snackbar
-        anchorOrigin={{vertical: 'bottom', horizontal: 'left'}}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         open={open}
         autoHideDuration={2000}
         onClose={this.props.closeSnackbar}
@@ -60,7 +60,7 @@ class SnackbarWrapComponent extends React.Component<Props> {
           className={backgroundClass}
           message={<span className={classes.message}>
             <Icon className={classes.icon} />
-            <span style={{marginLeft: 15, fontSize: 15}}>{message}</span>
+            <span style={{ marginLeft: 15, fontSize: 15 }}>{message}</span>
 
           </span>}
           action={[
@@ -78,7 +78,7 @@ class SnackbarWrapComponent extends React.Component<Props> {
     )
   }
 }
-const mapStateToProps = (state: State): {open: boolean; message: string; variant: Variant} => {
+const mapStateToProps = (state: State): { open: boolean; message: string; variant: Variant } => {
   return {
     open: state.snackbar.open,
     message: state.snackbar.message,

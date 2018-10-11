@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { getStylesHeader } from '../exports'
-import { State} from '../types'
+import { getStylesHeader, withSnack } from '../exports'
+import { State } from '../types'
 import { AppBar, withStyles, WithStyles, Toolbar, createStyles, Tooltip } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -43,7 +43,7 @@ class HeaderComp extends React.Component<Props> {
             {/* need to use classes to override Tooltip, DO NOT USE CLASSNAME */}
             <Tooltip
               placement="bottom"
-              classes={{tooltip: classes.tooltip}}
+              classes={{ tooltip: classes.tooltip }}
               title="Your current money, you get $100 at the start and $250 for each hackerman you create."
             >
               <h2 className={classes.link}>${money}</h2>
@@ -57,4 +57,4 @@ class HeaderComp extends React.Component<Props> {
 const mapStateToProps = (state: State) => ({
   money: state.money
 })
-export const Header = connect(mapStateToProps)(withStyles(styles)(HeaderComp))
+export const Header = withSnack('header', connect(mapStateToProps)(withStyles(styles)(HeaderComp)))

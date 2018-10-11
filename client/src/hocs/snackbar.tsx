@@ -1,9 +1,12 @@
 import React from 'react'
 import { openSnackbar } from '../exports'
-import {Variant} from '../types'
-import {connect} from 'react-redux'
+import { Variant, State } from '../types'
+import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 
+const mapStateToProps = (state: State) => ({
+
+})
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   openSnackbar: (msg: string, vrt: Variant) => dispatch(openSnackbar(msg, vrt))
 })
