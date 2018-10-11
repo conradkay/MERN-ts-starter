@@ -4,10 +4,7 @@ import {
 } from '../exports'
 import { State, Variant } from '../types'
 import { Dispatch } from 'redux'
-import {
-  withStyles, WithStyles, createStyles, Theme,
-  SnackbarContent, Snackbar, IconButton,
-} from '@material-ui/core'
+import { withStyles, WithStyles, createStyles, Theme, SnackbarContent, Snackbar, IconButton } from '@material-ui/core'
 
 import { connect } from 'react-redux'
 
@@ -85,7 +82,7 @@ const mapStateToProps = (state: State): { open: boolean; message: string; varian
     variant: state.snackbar.variant
   }
 }
-const mapDispatchToProps = (dispatch: Dispatch) => ({
+const mapDispatchToProps = (dispatch: Dispatch): { closeSnackbar: () => void } => ({
   closeSnackbar: () => dispatch(closeSnackbar())
 })
 
