@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { getStylesHeader, State } from '../exports'
+import { getStylesHeader } from '../exports'
+import { State} from '../types'
 import { AppBar, withStyles, WithStyles, Toolbar, createStyles, Tooltip } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'

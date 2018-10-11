@@ -1,58 +1,23 @@
 {
-  "parser": "typescript-eslint-parser",
+  "extends": "eslint:recommended",
   "env": {
-    "browser": true,
+    "browser": false,
     "es6": true,
-    "jest": true
+    "node": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings"
-  ],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
-  "plugins": [
-    "react",
-    "typescript"
-  ],
+  "parser": "babel-eslint",
   "rules": {
-    "jest/no-disabled-tests": "warn",
-    "jest/no-focused-tests": "error",
-    "jest/no-identical-title": "error",
-    "jest/prefer-to-have-length": "warn",
-    "jest/valid-expect": "error",
-    "no-unused-vars": "warn",
-    "no-empty-pattern": "warn",
-    "indent": [
-      "warn",
-      2
-    ],
-    "linebreak-style": [
-      "warn",
-      "unix"
-    ],
-    "quotes": [
-      "warn",
-      "single",
-      {
-        "allowTemplateLiterals": true
-      }
-    ],
-    "semi": [
-      "warn",
-      "never"
-    ],
-    "no-empty": [
-      "warn"
-    ],
-    "no-console": "off",
-    "react/prop-types": "off"
+    "strict": 0,
+    "quotes": [2, "single", "avoid-escape"],
+    "semi": [2, "never"],
+    "space-before-function-paren": [2, "always"],
+    "keyword-spacing": [2, {"before": true, "after": true}],
+    "space-infix-ops": 2,
+    "spaced-comment": [2, "always"],
+    "arrow-spacing": 2,
+    "no-console": 0
+  },
+  "globals": {
   }
 }
+

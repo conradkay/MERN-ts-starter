@@ -1,0 +1,9 @@
+{
+  "watch": [
+    "/server.js",
+    "/model.js",
+    "/router.js",
+    "/package.json"
+  ],
+  "ext": "ts, js, jsx, tsx, json"
+}

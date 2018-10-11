@@ -1,7 +1,9 @@
 import * as React from 'react'
 import {
-  State, closeSnackbar, Dispatch, getClassSnackbarVariant, Variant
+  closeSnackbar, getClassSnackbarVariant
 } from '../exports'
+import {State, Variant} from '../types'
+import {Dispatch} from 'redux'
 import {
   withStyles, WithStyles, createStyles, Theme,
   SnackbarContent, Snackbar, IconButton,
