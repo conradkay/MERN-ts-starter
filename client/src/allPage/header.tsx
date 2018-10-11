@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { getStylesHeader, withSnack } from '../exports'
+import { getStylesHeader } from '../exports'
 import { State } from '../types'
 import { AppBar, withStyles, WithStyles, Toolbar, createStyles, Tooltip } from '@material-ui/core'
 import { Link } from 'react-router-dom'
@@ -7,10 +7,11 @@ import { connect } from 'react-redux'
 
 const styles = () => createStyles({
   root: { flexGrow: 1, marginBottom: 75, fontSize: 20, display: 'flex', justifyContent: 'center', alignItems: 'center' },
-  link: { color: 'white', fontSize: 20, textDecoration: 'none', flexGrow: 1, fontWeight: 400 },
+  link: { textAlign: 'center', color: 'white', fontSize: 20, textDecoration: 'none', flexGrow: 1, fontWeight: 400 },
   badge: { top: 1, right: -15, fontSize: 16, color: '#76FF03' },
   tooltip: { fontSize: 15 }
 })
+
 type Components = 'home' | 'hackermen' | 'becomeAHackerman' | 'hired' | '404'
 interface Props extends WithStyles<typeof styles> {
   currentComponent: Components
@@ -28,7 +29,7 @@ class HeaderComp extends React.Component<Props> {
         <AppBar color="primary">
           <Toolbar>
             <Link
-              style={getStylesHeader(currentComponent === 'home')}
+              style={{ ...getStylesHeader(currentComponent === 'home') }}
               className={classes.link} to={'/'}>Home</Link>
             <Link
               style={getStylesHeader(currentComponent === 'hackermen')}
@@ -57,4 +58,4 @@ class HeaderComp extends React.Component<Props> {
 const mapStateToProps = (state: State) => ({
   money: state.money
 })
-export const Header = withSnack('header', connect(mapStateToProps)(withStyles(styles)(HeaderComp)))
+export const Header = connect(mapStateToProps)(withStyles(styles)(HeaderComp))

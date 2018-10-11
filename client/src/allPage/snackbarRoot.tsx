@@ -4,7 +4,7 @@ import {
 } from '../exports'
 import { State, Variant } from '../types'
 import { Dispatch } from 'redux'
-import { withStyles, WithStyles, createStyles, Theme, SnackbarContent, Snackbar, IconButton } from '@material-ui/core'
+import { withStyles, createStyles, Theme, SnackbarContent, Snackbar, IconButton, WithStyles } from '@material-ui/core'
 
 import { connect } from 'react-redux'
 
