@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
-
+const logger = require('morgan')
+app.use(logger('dev'))
 mongoose.connect(
   'mongodb://root:cokay101@ds127843.mlab.com:27843/hackermen',
   { useNewUrlParser: true }
